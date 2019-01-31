@@ -1,0 +1,16 @@
+service: tensorflow
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: python2.7
+  memorySize: 1536
+  timeout: 300
+  region: eu-central-1
+
+functions:
+  main:
+    handler: index.handler
+    events:
+      - http: POST handler
